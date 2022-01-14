@@ -23,7 +23,7 @@ const updatePassword=Math.random();
 const stringName='PUSHNOV_PROJECT_AVIATICKETS';
 
 
-
+const info = {age:28}
 
 function storeInfo() {
     $.ajax( {
@@ -38,10 +38,7 @@ function lockGetReady(callresult) {
     if ( callresult.error!=undefined )
         alert(callresult.error);
     else {
-        const info={
-            name :'Sasah', 
-            age : 38
-        };
+        
         $.ajax( {
                 url : url, type : 'POST', cache : false, dataType:'json',
                 data : { f : 'UPDATE', n : stringName, v : JSON.stringify(info), p : updatePassword },
@@ -55,7 +52,7 @@ function updateReady(callresult) {
     if (callresult.error != undefined) console.log(callresult.error);
   }
 
-  storeInfo();
+  
 
 
 async function getInfo() {
