@@ -96,7 +96,7 @@ function maxelemInObject(arr) {
 }
 //console.log(maxelemInObject(arr4))
 
-// убрать дублкаты в массиве глубокой вложенности
+// убрать дубликаты в массиве глубокой вложенности
 const arr5 = [[1, 2, 3, 4, 5], [1, [2], [3, [[4]]], [5,6]]];
 
 function flatten2(arr,res) {
@@ -111,7 +111,7 @@ function flatten2(arr,res) {
 	  const result = new Set(res);
       return  [...result];
  }
- //console.log(flatten2(arr5))
+ console.log(flatten2(arr5))
 
  function move(arr,from, to) {
 	 const elem = arr.splice(from, 1);
@@ -121,4 +121,9 @@ function flatten2(arr,res) {
  }
 
 
- console.log (move ([10, 20, 30, 40, 50], 0, 2));
+ //console.log (move ([10, 20, 30, 40, 50], 0, 2));
+
+ let promise = new Promise(function (resolve, reject) {
+	setTimeout(() => reject(new Error('error')), 2000);
+	setTimeout(() => resolve('ignored'), 1000);
+});
