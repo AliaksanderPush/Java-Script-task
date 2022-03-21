@@ -46,13 +46,13 @@ let users = [
 
   //преобразование массива с обьектами В ОЪЕКТ типа {id:{name:'s', age:23}}
 
-  function serilizeObj(obj) {
-      let res = obj.reduce((acc, item) => {
-         return ({...acc, [item.id]:{name:item.name, age:item.age}})
-		  },{});
-	  return res;
-  }
-//console.log(serilizeObj(users));
+  function serilize(obj) {
+    let res = obj.reduce((acc, item) => {
+       return ([...acc, {id:item.id, name:item.name, age:item.age}])
+    },[]);
+  return res;
+}
+console.log(serilize(users));
 
 //преобразование массива с обьектами В ОЪЕКТ типа {name:'s', age:23}
 function serelizeObj(obj) {
@@ -63,3 +63,14 @@ function serelizeObj(obj) {
 }
 //console.log(serelizeObj(users));
 
+var animals=[ 'собака', 'кошка', 'тушкан', 'собака', 'собака', 'тушкан' ];
+
+    var count={}; // ключ - животное, значение - сколько раз оно встретилось
+    for ( var i=0; i<animals.length; i++ ) {
+        var animal=animals[i];
+        if ( !(animal in count) )
+            count[animal]=0;
+        count[animal]++;
+    }
+
+    console.log( count ); 
